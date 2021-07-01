@@ -1,9 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
 import App from './views/app';
-// import swRegister from './sw-register';
-// import WebSocketInitiator from './utils/websocket-initiator';
-// import CONFIG from './globals/config';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   buttonOpen: document.querySelector('#hamburger'),
@@ -20,6 +18,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-//   swRegister();
-//   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+  swRegister();
 });
