@@ -1,3 +1,6 @@
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
+
 const Home = {
   async render() {
     return `
@@ -11,13 +14,17 @@ const Home = {
     </div>
       <div class="content">
         <h2 class="content__heading">Explore Restaurants</h2>
-        <div id="restaurants" class="restaurants">
+        <div id="restaurant-list" class="restaurants">
         </div>
       </div>
     `;
   },
   async afterRender() {
-    // get movie list from API
+    const restaurants = await RestaurantSource.restaurantList();
+    const restaurantContainer = document.querySelector('#restaurant-list');
+    restaurants.forEach((restaurant) => {
+      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+    });
   },
 };
 
