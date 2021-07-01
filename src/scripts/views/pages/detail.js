@@ -1,16 +1,19 @@
+import UrlParser from '../../routes/url-parser';
+import RestaurantSource from '../../data/restaurant-source';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
+
 const Detail = {
   async render() {
     return `
-      <div class="content">
-        <h2 class="content__heading">Restaurant Detail</h2>
-        <div id="restaurant" class="restaurant"></div>
-        <div id="likeButtonContainer"></div>
-        </div>
-      </div>
+      <div id="restaurant" class="restaurant"></div>
+      <div id="likeButtonContainer"></div>
     `;
   },
   async afterRender() {
-    // get movie list from idb
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantSource.detailRestaurant(url.id);
+    const restaurantContainer = document.querySelector('#restaurant');
+    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
   },
 };
 
