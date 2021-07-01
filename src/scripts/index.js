@@ -10,6 +10,7 @@ const app = new App({
   buttonClose: document.querySelector('#multiplication'),
   drawer: document.querySelector('#navigationDrawer'),
   overlay: document.querySelector('#overlay'),
+  hero: document.querySelector('#hero'),
   content: document.querySelector('#mainContent'),
 });
 
