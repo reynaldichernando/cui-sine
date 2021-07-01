@@ -6,6 +6,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
 .skip-link {
     position: absolute;
     top: -40px;
@@ -123,6 +129,10 @@ nav ul li a {
     max-height: 650px;
     object-fit: cover;
     object-position: top;
+}
+
+main {
+    flex: 1;
 }
 
 main h2 {
@@ -245,12 +255,14 @@ footer {
         margin: 15px;
     }
 
-    #hamburger {
+    #hamburger, #multiplication {
         display: inline;
+        border: none;
+        background: none;
     }
 
     #multiplication {
-        display: inline;
+        color: white;
     }
 
     header {
