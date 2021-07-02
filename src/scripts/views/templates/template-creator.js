@@ -1,8 +1,8 @@
 import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
-<img class="restaurant-poster" src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
-<h2 class="restaurant-title">${restaurant.name}</h2>
+  <img class="restaurant-poster" src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+  <h2 class="restaurant-title">${restaurant.name}</h2>
   <div class="restaurant-info">
     <h3>Information</h3>
     <h4>City</h4>
@@ -12,9 +12,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <h4>Rating</h4>
     <p>${restaurant.rating}</p>
     <h4>Categories</h4>
-    <div class="restaurant-categories">
-    ${restaurant.categories.map((category) => `<div class="category-item">${category.name}</div>`).join('')}
-    </div>
+    <p>
+    ${restaurant.categories.map((category) => `${category.name}`).join(', ')}
+    </p>
   </div>
   <div class="restaurant-description">
     <h3>Description</h3>
@@ -22,17 +22,57 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
   <div class="menu">
     <h3>Menu</h3>
-    <div class="drinks">
-    ${restaurant.menus.drinks.map((drink) => drink.name)}
-    </div>
-    <div class="foods">
-    ${restaurant.menus.foods.map((food) => food.name)}
+    <div class="menu-detail">
+      <table>
+        <thead>
+          <tr>
+            <th>Drinks</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${restaurant.menus.drinks.map((drink) => `
+        <tr>
+        <td class="menu-item">
+          <div>
+            <h5>${drink.name}<h5>
+            <small>Quisque rutrum. Aenean imperdiet.</small>
+          </div>
+          <div>$ ${(Math.random() * 99).toFixed(2)}</div>
+        </td>
+        </tr>
+        `).join('')}
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Foods</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${restaurant.menus.foods.map((food) => `
+        <tr>
+        <td class="menu-item">
+          <div>
+            <h5>${food.name}<h5>
+            <small>Quisque rutrum. Aenean imperdiet.</small>
+          </div>
+          <div>$ ${(Math.random() * 99).toFixed(2)}</div>
+        </td>
+        </tr>
+        `).join('')}
+        </tbody>
+      </table>
     </div>
   </div>
   <div class="review-list">
     <h3>Reviews</h3>
-    <div>
-    ${restaurant.customerReviews.map((review) => `${review.name}-${review.review}-${review.date}`).join('<br>')}
+    ${restaurant.customerReviews.map((review) => `
+    <div class="review-item">
+      <p><em>"${review.review}"</em></p>
+      <p>- ${review.name} (${review.date})</p>
+    </div>
+    `).join('')}
     </div>
   </div>
 `;

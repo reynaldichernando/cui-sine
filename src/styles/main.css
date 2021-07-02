@@ -209,6 +209,60 @@ footer {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* 
+    Detail Page
+*/
+
+#restaurant {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.restaurant-poster {
+    width: 100%;
+}
+
+.restaurant-info p, .restaurant-info h3, .restaurant-info h4, .restaurant-description h3, .restaurant-description p {
+    margin: 10px;
+}
+
+.menu, .review-list {
+    margin: 10px;
+}
+
+.restaurant-info, .restaurant-description, .menu, .review-list {
+    margin-top: 30px;
+}
+
+.restaurant-description p {
+    text-align: justify;
+    line-height: 1.25rem;
+}
+
+.menu table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.menu table, .menu table th {
+    border: 1px solid black;
+}
+
+.menu table th {
+    padding: 10px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.review-item {
+    margin: 10px;
+}
+
+
 /*
    Like
 */
@@ -227,90 +281,4 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media screen and (max-width: 575px) {
-    #overlay {
-        opacity: 0;
-    }
-
-    #overlay.open {
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        background-color: black;
-        opacity: 0.5;
-        z-index: 4;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    nav {
-        display: flex;
-        align-items: flex-start;
-        position: fixed;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        z-index: 5;
-        margin: 0;
-
-        background-color: black;
-        color: white;
-
-        transform: translate(-250px, 0);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    nav.open {
-        transform: translate(0, 0);
-    }
-
-    nav ul {
-        flex-direction: column;
-        margin: 50px 0;
-        margin-right: 50px;
-    }
-
-    nav ul li {
-        margin: 15px;
-    }
-
-    #hamburger, #multiplication {
-        display: inline;
-        border: none;
-        background: none;
-    }
-
-    #multiplication {
-        color: white;
-    }
-
-    header {
-        justify-content: flex-start;
-    }
-
-    header h1 {
-        padding: 20px;
-    }
-
-    #hero-header {
-        font-size: 1.5rem;
-    }
-    
-    #hero-detail {
-        font-size: 1rem;
-    }
-
-    .restaurant-item .card-header {
-        margin: 0 15px 0 15px;
-    }
-    
-    .restaurant-item .card-body p {
-        padding: 15px 15px 25px 15px;
-    }
-
-    .restaurant-item .card-body p {
-        line-height: 1.3rem;
-        font-size: 0.9rem;;
-    }
 }
