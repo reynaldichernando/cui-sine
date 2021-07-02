@@ -262,6 +262,10 @@ footer {
     margin: 10px;
 }
 
+.review-item p {
+    word-wrap: break-word;
+}
+
 
 /*
    Like
