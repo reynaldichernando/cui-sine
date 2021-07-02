@@ -3,26 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <meta name="theme-color" content="#000000"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
     <title>cui·sine</title>
 </head>
 
 <body>
-    <div id="overlay">
-
-    </div>
-    <a href="#maincontent" class="skip-link">Skip to Content</a>
+    <div id="overlay"></div>
+    <a href="#mainContent" class="skip-link">Skip to Content</a>
     <header>
-        <a id="hamburger" href="#">☰</a>
+        <button id="hamburger">☰</button>
         <h1>
             cui·sine
         </h1>
     </header>
-    <nav>
-        <a id="multiplication" href="#">✕</a>
+    <nav id="navigationDrawer">
+        <button id="multiplication">✕</button>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Favorite</a></li>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/favorite">Favorite</a></li>
             <li><a href="https://github.com/reynaldichernando" target="_blank">About Us</a></li>
         </ul>
     </nav>
@@ -36,27 +39,10 @@
         </div>
     </div>
 
-    <main id="maincontent">
-        <h2>Explore Restaurants</h2>
-        <div id="restaurant-list">
-            <div id="restaurant-item-template">
-                <img class="picture" src="" alt="" width="300px">
-                <div class="city"></div>
-                <div class="card-header">
-                    <h3 class="title"><a href="#"></a></h3>
-                    <div class="rating-item">
-                        Rating: <span class="rating"></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="description"></p>
-                </div>
-            </div>
-        </div>
-    </main>
+    <main id="mainContent"></main>
 
     <footer>
-        Copyright © <span id="year"></span> - <span id="company-name">cui·sine</span>
+        Copyright © 2021 - <span id="company-name">cui·sine</span>
     </footer>
 </body>
 
