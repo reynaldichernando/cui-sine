@@ -275,9 +275,9 @@ footer {
     position: fixed;
     bottom: 16px;
     right: 16px;
-    background-color: #db0000;
+    background-color: black;
     color: white;
-    border: 0;
+    border: 1px solid white;
     border-radius: 50%;
     width: 55px;
     height: 55px;
