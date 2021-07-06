@@ -297,6 +297,7 @@ footer {
 }
 
 .loader-text {
+    display: none;
     margin: 10px;
     font-size: 0.8rem;
 }

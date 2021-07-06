@@ -16,11 +16,18 @@ const Home = {
     const loading = document.querySelector('#loading');
     loading.innerHTML = createLoadingTemplate();
     loading.style.display = 'block';
+
+    const loaderText = document.querySelector('.loader-text');
+    setTimeout(() => {
+      loaderText.style.display = 'block';
+    }, 3000);
+
     const restaurants = await RestaurantSource.restaurantList();
     const restaurantContainer = document.querySelector('#restaurant-list');
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
+
     loading.style.display = 'none';
   },
 };

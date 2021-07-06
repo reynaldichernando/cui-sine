@@ -13,12 +13,20 @@ const Detail = {
   },
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
+
     const loading = document.querySelector('#loading');
     loading.innerHTML = createLoadingTemplate();
     loading.style.display = 'block';
+
+    const loaderText = document.querySelector('.loader-text');
+    setTimeout(() => {
+      loaderText.style.display = 'block';
+    }, 3000);
+
     const restaurant = await RestaurantSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+
     loading.style.display = 'none';
 
     LikeButtonInitiator.init({
