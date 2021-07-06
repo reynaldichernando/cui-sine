@@ -292,6 +292,15 @@ footer {
     Loader
 */
 
+.loader-wrapper {
+    height: 4em;
+}
+
+.loader-text {
+    margin: 10px;
+    font-size: 0.8rem;
+}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -333,4 +342,12 @@ footer {
     box-shadow: 0 -2em;
     height: 5em;
   }
+}
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
