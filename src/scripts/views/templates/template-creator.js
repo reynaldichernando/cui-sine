@@ -93,6 +93,13 @@ const createRestaurantItemTemplate = (restaurant) => `
 </div>
 `;
 
+const createLoadingTemplate = () => `
+  <div class="loader-wrapper">
+    <div class="loader">Loading...</div>
+  </div>
+  <p class="loader-text">Pastikan koneksi internet kamu lancar. Silahkan muat ulang halaman ini apabila animasi loading tidak berhenti</p>
+`;
+
 const createLikeButtonTemplate = () => `
   <button aria-label="favorite this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -108,6 +115,7 @@ const createLikedButtonTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
+  createLoadingTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
 };
