@@ -1,3 +1,5 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
@@ -79,7 +81,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
-    <img class="picture" src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" width="300px">
+    <img class="picture lazyload" data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="${restaurant.name}" width="300px">
     <div class="city">${restaurant.city}</div>
     <div class="card-header">
         <h3 class="title"><a href="#/detail/${restaurant.id}">${restaurant.name}</a></h3>
@@ -93,13 +95,20 @@ const createRestaurantItemTemplate = (restaurant) => `
 </div>
 `;
 
-const createLikeButtonTemplate = () => `
+const createLoadingTemplate = () => `
+  <div class="loader-wrapper">
+    <div class="loader">Loading...</div>
+  </div>
+  <p class="loader-text">Pastikan koneksi internet kamu lancar. Silahkan muat ulang halaman ini apabila animasi loading tidak berhenti</p>
+`;
+
+const createLikeRestaurantButtonTemplate = () => `
   <button aria-label="favorite this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestaurantButtonTemplate = () => `
   <button aria-label="un-favorite this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
@@ -108,6 +117,7 @@ const createLikedButtonTemplate = () => `
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLoadingTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };

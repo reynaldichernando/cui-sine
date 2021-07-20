@@ -94,16 +94,25 @@ nav ul li a {
 #hero {
     width: 100%;
     height: 75vh;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.5)), url(/images/heros/hero-image_1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: top;
 
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#hero-image {
+    z-index: -5;
+    width: 100%;
+    position: absolute;
+}
+
+#hero-image img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(0.5);
 }
 
 #hero-header, #hero-detail {
@@ -122,13 +131,6 @@ nav ul li a {
 
 #hero-detail {
     font-size: 1.2rem;
-}
-
-.hero img {
-    width: 100%;
-    max-height: 650px;
-    object-fit: cover;
-    object-position: top;
 }
 
 main {
@@ -292,6 +294,16 @@ footer {
     Loader
 */
 
+.loader-wrapper {
+    height: 4em;
+}
+
+.loader-text {
+    display: none;
+    margin: 10px;
+    font-size: 0.8rem;
+}
+
 .loader,
 .loader:before,
 .loader:after {
@@ -333,4 +345,12 @@ footer {
     box-shadow: 0 -2em;
     height: 5em;
   }
+}
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
