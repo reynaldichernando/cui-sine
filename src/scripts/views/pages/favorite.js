@@ -19,7 +19,7 @@ const Favorite = {
         restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       });
     } else {
-      restaurantContainer.innerHTML = '<div class="restaurant-item__not__found">Tidak ada restaurant untuk ditampilkan</div>'
+      restaurantContainer.innerHTML = '<div class="restaurant-item__not__found">Tidak ada restaurant untuk ditampilkan</div>';
     }
   },
 };
