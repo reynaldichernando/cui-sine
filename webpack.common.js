@@ -53,6 +53,7 @@ module.exports = {
         }),
       ],
     }),
+    new BundleAnalyzerPlugin(),
   ],
   optimization: {
     splitChunks: {

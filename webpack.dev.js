@@ -8,7 +8,4 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
   },
-  plugins: [
-    new BundleAnalyzerPlugin(),
-  ]
 });
