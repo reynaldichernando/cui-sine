@@ -10,11 +10,11 @@ This project is a part of Dicoding Front-End Web Developer Expert final submissi
 
 The web application demonstrates the use of:
 1. Mobile First Approach
-2. Accesibility
+2. Accessibility
 3. Javascript Clean Code
 4. Progressive Web App
 5. Automation Testing (Karma + Codecept)
-6. Web Performance (web Vitas and optimizations)
+6. Web Performance (web vitals and optimizations)
 
 Check out the live demo: https://ashy-pond-0561d6800.azurestaticapps.net/
 
